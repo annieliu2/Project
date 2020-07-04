@@ -64,30 +64,55 @@
         </div>
         <br>
         <br>
-    <form>
-        <h2>Contact Me</h2>
+    <form name="myForm">
+        <h2 id="word">Contact Me</h2>
         <p>
             First name
-            <input type="text" name="firstname" maxlength="100">
+            <input type="text" name="firstName" maxlength="100">
         </p>
         <p>
             Last name
-            <input type="text" name="lastname" maxlength="100">
+            <input type="text" name="lastName" maxlength="100">
         </p>
         <p>
             How do you know about my website?
             Google <input type="checkbox" name="g" value="google">
             Friend <input type="checkbox" name="f" value="friend">
             Professor <input type="checkbox" name="p" value="prof">
+            <span id="p">Class</span>
+            <input type="checkbox" name="c" value="others">
         </p>
         <p>
             Feedback
            <div><textarea name="comments" id="" cols="30" rows="10"></textarea></div>
         </p>
         <div>
-        <input type="submit" value="submit" name="submit">
-        <input type="reset" value="reset" name="reset">
+        <input type="submit" value="submit" name="submit" id="submit" /> 
+        <input type="reset" value="reset" name="reset"/>
         </div>
     </form>
+    <script>
+        function changeWord() {
+            document.getElementById("word").innerHTML = "Contact Annie";
+        }
+        document.querySelector("form").onmouseover = changeWord();
+        function validateForm() {
+            const x = document.forms["myForm"]["firstName"].value;
+            if (x == "")
+            {
+                alert("Please enter your first name.");
+                return false;
+            }
+        } document.querySelector("#submit").onclick = function () {
+            validateForm();
+        }
+        function change() {
+            const text = new Array ("Others","Random", "Class", "Professor");
+            const rand = text[Math.floor(Math.random()*4)];
+            document.getElementById("p").innerHTML = rand;
+        } document.querySelector("body").onload = function () {
+            change();
+        }
+    </script>
 </body>
 </html>
