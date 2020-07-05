@@ -94,7 +94,7 @@
         <br>
      <table>
          <tr>
-             <td class="heading" colspan="2">Chewy Chocolate Chip Cookies</td>
+             <td class="heading" id="heading" colspan="2">Chewy Chocolate Chip Cookies</td>
          </tr>
          <tr>
              <td class="first" rowspan="2">
@@ -113,7 +113,8 @@
                  </ul>
              </td>
              <td class="pic">
-                <img src="https://inquiringchef.com/wp-content/uploads/2020/03/Chocolate-Chip-Cookies_square.jpg" alt="chocolatechipcookies" title="chocolatechip">
+                <img id="cookies"
+                src="https://inquiringchef.com/wp-content/uploads/2020/03/Chocolate-Chip-Cookies_square.jpg" alt="chocolatechipcookies" title="chocolatechip">
             </td>
         </tr>
         <tr>
@@ -131,5 +132,13 @@
              </td>
          </tr>
      </table>
+    <script>
+        function f(){
+            const x = document.querySelector("h1");
+            x.innerText = "Best Cookies Ever!";
+        }
+        document.querySelector("h1").onclick = f;
+
+    </script>
 </body>
 </html>

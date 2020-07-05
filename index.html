@@ -72,8 +72,26 @@
       <img
         src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/overhead-view-of-baking-ingredients-and-a-notepad-royalty-free-image-930086476-1546440806.jpg"
         alt="baking"
+        id="baking"
         title="baking"
       />
     </div>
+    <script>
+      function enlarge() {
+        let x = document.querySelector("img");
+        x.style.width ="100%";
+      }
+      document.querySelector("img").onmouseover = function () {
+        enlarge();
+      };
+      console.log (enlarge);
+      function reduce() {
+        let x = document.querySelector("img");
+        x.style.width = "80%";
+      }
+      document.querySelector("img").onmouseout = function() {
+        reduce();
+      };
+    </script>
   </body>
 </html>
